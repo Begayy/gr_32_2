@@ -3,6 +3,5 @@
 /Scripts
 pyvenv.cfg
 __pycache__
-settings.ini
 /.idea/
- __pycache__/winning_logic.cpython-311.pyc
+
