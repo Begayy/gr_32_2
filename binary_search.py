@@ -20,3 +20,7 @@ def binary_search(element, lst):
     else:
         print("Элемент не найден.")
 
+
+lst = [23, 21, 45, 5, 1]
+element = 23
+print(binary_search(element, lst))

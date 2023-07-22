@@ -6,3 +6,6 @@ def bubble_sort(lst):
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
     return lst
 
+
+lst = [23, 21, 45, 5, 1]
+print(bubble_sort(lst))
