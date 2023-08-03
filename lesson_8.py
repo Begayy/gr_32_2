@@ -36,16 +36,18 @@ def main(conn):
               "id города из перечня городов ниже, для выхода из программы введите 0:")
 
         rows_list = cursor.fetchall()
-        for row in rows_list:
-            print(f"{row[0]}. {row[1]}")
-        input_city_id = int(input("Введите id города: "))
+        while True:
+            for row in rows_list:
+                print(f"{row[0]}. {row[1]}")
+            input_city_id = int(input("Введите id города: "))
 
-        if input_city_id == 0:
-            print("Программа завершена.")
-        elif input_city_id == get_employees_by_city(connection_to_db, input_city_id):
-            for employee in rows_list:
-                print(
-                    f"Имя: {employee[0]}, Фамилия: {employee[1]}, Страна: {employee[2]}, Город: {employee[3]}, Площадь города: {employee[4]}")
+            if input_city_id == 0:
+                print("Программа завершена.")
+                break
+            elif input_city_id == get_employees_by_city(connection_to_db, input_city_id):
+                for employee in rows_list:
+                    print(
+                        f"Имя: {employee[0]}, Фамилия: {employee[1]}, Страна: {employee[2]}, Город: {employee[3]}, Площадь города: {employee[4]}")
 
     except sqlite3.Error as e:
         print(e)
